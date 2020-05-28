@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,16 +9,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:padding="10pt">
+        android:padding="10pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/lbl"
             android:layout_width="match_parent"
             android:layout_height="102dp"
             android:layout_marginBottom="100px"
+            android:background="@color/gray"
             android:gravity="right"
+            android:paddingRight="10pt"
             android:text="0"
             android:textSize="32pt" />
 
@@ -35,6 +42,7 @@
                     android:id="@+id/buttonAC"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="AC"
                     android:textSize="12pt" />
 
@@ -42,6 +50,7 @@
                     android:id="@+id/buttonPosNeg"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="+/-"
                     android:textSize="12pt" />
 
@@ -49,6 +58,7 @@
                     android:id="@+id/buttonPercent"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="%"
                     android:textSize="12pt" />
 
@@ -56,7 +66,9 @@
                     android:id="@+id/buttonDivide"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/orange"
                     android:text="÷"
+                    android:textColor="@color/white"
                     android:textSize="12pt" />
             </TableRow>
 
@@ -68,6 +80,7 @@
                     android:id="@+id/button7"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="7"
                     android:textSize="12pt" />
 
@@ -75,6 +88,7 @@
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="8"
                     android:textSize="12pt" />
 
@@ -82,6 +96,7 @@
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="9"
                     android:textSize="12pt" />
 
@@ -89,7 +104,9 @@
                     android:id="@+id/buttonTimes"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/orange"
                     android:text="*"
+                    android:textColor="@color/white"
                     android:textSize="12pt" />
             </TableRow>
 
@@ -101,6 +118,7 @@
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="4"
                     android:textSize="12pt" />
 
@@ -108,6 +126,7 @@
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="5"
                     android:textSize="12pt" />
 
@@ -115,6 +134,7 @@
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="6"
                     android:textSize="12pt" />
 
@@ -122,7 +142,9 @@
                     android:id="@+id/buttonMinus"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/orange"
                     android:text="-"
+                    android:textColor="@color/white"
                     android:textSize="12pt" />
             </TableRow>
 
@@ -134,6 +156,7 @@
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="1"
                     android:textSize="12pt" />
 
@@ -141,6 +164,7 @@
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="2"
                     android:textSize="12pt" />
 
@@ -148,6 +172,7 @@
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/white"
                     android:text="3"
                     android:textSize="12pt" />
 
@@ -155,7 +180,9 @@
                     android:id="@+id/buttonPlus"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
+                    android:background="@color/orange"
                     android:text="+"
+                    android:textColor="@color/white"
                     android:textSize="12pt" />
             </TableRow>
 
@@ -172,6 +199,7 @@
                 android:layout_width="176dp"
                 android:layout_height="100dp"
                 android:layout_weight="0"
+                android:background="@color/white"
                 android:text="0"
                 android:textSize="12pt" />
 
@@ -180,6 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="0"
+                android:background="@color/white"
                 android:text="."
                 android:textSize="12pt" />
 
@@ -188,7 +217,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="0"
+                android:background="@color/orange"
                 android:text="="
+                android:textColor="@color/white"
                 android:textSize="12pt" />
         </LinearLayout>
     </LinearLayout>
