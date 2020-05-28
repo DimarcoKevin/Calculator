@@ -25,7 +25,7 @@
             android:gravity="center_vertical|end"
             android:text="0"
             android:textColor="@color/white"
-            android:textSize="64pt" />
+            android:textSize="30pt" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -41,6 +41,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="clickAC"
                     android:text="@string/AC"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -86,6 +87,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/seven"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -96,6 +98,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/eight"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -106,6 +109,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/nine"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -131,6 +135,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/four"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -141,6 +146,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/five"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -151,6 +157,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/six"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -176,6 +183,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/one"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -186,6 +194,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/two"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -196,6 +205,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="numberClick"
                     android:text="@string/three"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
@@ -226,6 +236,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:background="@color/white"
+                android:onClick="numberClick"
                 android:text="@string/zero"
                 android:textColor="@color/black"
                 android:textSize="12pt" />
