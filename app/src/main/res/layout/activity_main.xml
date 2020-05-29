@@ -52,6 +52,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="clickToggle"
                     android:text="@string/plusMinus"
                     android:textColor="@color/black"
                     android:textSize="12pt" />

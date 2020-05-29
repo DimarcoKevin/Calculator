@@ -2,6 +2,8 @@ package com.dimarco.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.util.Log.DEBUG
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // all operator button methods go here
+    // TODO : check to make sure last char wasnt a operator as well
     fun operatorClick(view: View) {
         val operatorSelected = view as Button
         var operator = ""
@@ -52,12 +55,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     // clear button method
-    fun clickAC() {
+    fun clickAC(view: View) {
         lbl.text = "0"
+    }
+
+    // adding decimals to numbers
+    // TODO : implement
+    fun clickDecimal() {
+
+    }
+
+    // toggle positive and negative
+    fun clickToggle(view: View) {
+        if (lbl.text.substring(0, 1) == "-") {
+            lbl.text = lbl.text.substring(1, lbl.text.length)
+        } else {
+            lbl.text = "-" + lbl.text
+        }
     }
 
     // equals button method
     // does the actual calculations and returns the solution
+    // TODO : complete implementation
     fun clickEquals() {
         val numbers = lbl.text.split("+", "-", "*", "÷")
         val operators = mutableListOf<Char>()
@@ -73,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             if (operator.equals("+") || operator.equals("-")) {
                 continue
             } else if (operator.equals("*") || operator.equals("÷")) {
-                
+
             }
 
         }
