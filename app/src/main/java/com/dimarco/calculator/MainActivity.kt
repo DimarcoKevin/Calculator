@@ -18,6 +18,15 @@ import kotlinx.android.synthetic.main.activity_main.*
  * 2020
  */
 class MainActivity : AppCompatActivity() {
+    private val operatorList = arrayOf('+', '-', '*', '÷')
+
+    // enum to replace operators
+    enum class Operator(val op: Char) {
+        PLUS('+'),
+        MINUS('-'),
+        MULTIPLY('*'),
+        DIVIDE('÷')
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +37,10 @@ class MainActivity : AppCompatActivity() {
     fun numberClick(view: View) {
         val numberSelected = view as Button
         var number = ""
+        if (lbl.text == "0") {
+            lbl.text = ""
+        }
+
         // finding which button was selected
         when (numberSelected.id) {
             button0.id -> number = "0"
@@ -41,18 +54,20 @@ class MainActivity : AppCompatActivity() {
             button8.id -> number = "8"
             button9.id -> number = "9"
         }
-        if (lbl.text == "0") {
-            lbl.text = ""
-        }
+
         lbl.append(number)
     }
 
     // all operator button methods go here
-    // TODO : check to make sure last char wasnt a operator as well
+    // only allows one operator per calculation
     fun operatorClick(view: View) {
         val operatorSelected = view as Button
         var operator = ""
 
+        // check if user has already added an operator
+        for (char in lbl.text) {
+            if (operatorList.contains(char)) return
+        }
 
         // finding which operator button was clicked
         when (operatorSelected.id) {
@@ -65,6 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // clear button method
+    // TODO : fix
     fun clickAC(view: View) {
         lbl.text = "0"
     }
@@ -87,25 +103,26 @@ class MainActivity : AppCompatActivity() {
     // equals button method
     // does the actual calculations and returns the solution
     // TODO : complete implementation
-    fun clickEquals() {
-        val numbers = lbl.text.split("+", "-", "*", "÷")
-        val operators = mutableListOf<Char>()
+    fun clickEquals(view: View) {
+        val numbers =  (lbl.text.split("+", "-", "*", "÷"))
+        val number1 = numbers[0].toDouble()
+        val number2 = numbers[1].toDouble()
 
-        for (char in lbl.text) {
-            if (char.equals("+") || char.equals("-") || char.equals("*") || char.equals("÷")) {
-                operators.add(char)
-            }
+        for (ch in lbl.text) {
+            if (ch == Operator.PLUS.op) {
+                lbl.text = (number1 + number2).toString()
+                return
+            } else if (ch == Operator.MINUS.op) {
+                lbl.text = (number1 - number2).toString()
+                return
+            } else if (ch == Operator.MULTIPLY.op) {
+                lbl.text = (number1 * number2).toString()
+                return
+            } else if (ch == Operator.DIVIDE.op) {
+                lbl.text = (number1 / number2).toString()
+                return
+            } 
         }
-
-        // needing to skip plus and minus for BEDMAS requirements
-        for (operator in operators) {
-            if (operator.equals("+") || operator.equals("-")) {
-                continue
-            } else if (operator.equals("*") || operator.equals("÷")) {
-
-            }
-
-        }
-
+        lbl.text = "ERROR"
     }
 }

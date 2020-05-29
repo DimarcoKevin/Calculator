@@ -263,6 +263,7 @@
                 android:layout_height="100dp"
                 android:layout_weight=".125"
                 android:background="@color/orange"
+                android:onClick="clickEquals"
                 android:text="@string/equals"
                 android:textColor="@color/white"
                 android:textSize="12pt" />
