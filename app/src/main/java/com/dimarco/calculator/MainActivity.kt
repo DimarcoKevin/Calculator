@@ -8,6 +8,15 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * A simple calculator application following the UI of the MacOS calculator.
+ * This application will only allow for 2 numbers to be compared (either added, subtracted, multiplied, or divided)
+ * This application allows for decimals and positive / negative numbers
+ *
+ * @author Kevin Dimarco
+ * www.kevindimarco.com
+ * 2020
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val operatorSelected = view as Button
         var operator = ""
 
+
         // finding which operator button was clicked
         when (operatorSelected.id) {
             buttonPlus.id -> operator = "+"
@@ -61,8 +71,8 @@ class MainActivity : AppCompatActivity() {
 
     // adding decimals to numbers
     // TODO : implement
-    fun clickDecimal() {
-
+    fun clickDecimal(view: View) {
+        lbl.append(".")
     }
 
     // toggle positive and negative

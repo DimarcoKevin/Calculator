@@ -252,6 +252,7 @@
                 android:layout_height="100dp"
                 android:layout_weight=".125"
                 android:background="@color/white"
+                android:onClick="clickDecimal"
                 android:text="@string/period"
                 android:textColor="@color/black"
                 android:textSize="12pt" />
