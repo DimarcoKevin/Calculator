@@ -13,10 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-
-
-
-    // all clickable button methods go here
+    // all number button methods go here
     fun numberClick(view: View) {
         val numberSelected = view as Button
         var number = ""
@@ -33,12 +30,53 @@ class MainActivity : AppCompatActivity() {
             button8.id -> number = "8"
             button9.id -> number = "9"
         }
+        if (lbl.text == "0") {
+            lbl.text = ""
+        }
         lbl.append(number)
     }
 
+    // all operator button methods go here
+    fun operatorClick(view: View) {
+        val operatorSelected = view as Button
+        var operator = ""
 
+        // finding which operator button was clicked
+        when (operatorSelected.id) {
+            buttonPlus.id -> operator = "+"
+            buttonMinus.id -> operator = "-"
+            buttonTimes.id -> operator = "*"
+            buttonDivide.id -> operator = "÷"
+        }
+        lbl.append(operator)
+    }
 
-    fun clickAC(view: View) {
+    // clear button method
+    fun clickAC() {
         lbl.text = "0"
+    }
+
+    // equals button method
+    // does the actual calculations and returns the solution
+    fun clickEquals() {
+        val numbers = lbl.text.split("+", "-", "*", "÷")
+        val operators = mutableListOf<Char>()
+
+        for (char in lbl.text) {
+            if (char.equals("+") || char.equals("-") || char.equals("*") || char.equals("÷")) {
+                operators.add(char)
+            }
+        }
+
+        // needing to skip plus and minus for BEDMAS requirements
+        for (operator in operators) {
+            if (operator.equals("+") || operator.equals("-")) {
+                continue
+            } else if (operator.equals("*") || operator.equals("÷")) {
+                
+            }
+
+        }
+
     }
 }
