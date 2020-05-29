@@ -2,8 +2,6 @@ package com.dimarco.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.Log.DEBUG
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
@@ -121,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             } else if (ch == Operator.DIVIDE.op) {
                 lbl.text = (number1 / number2).toString()
                 return
-            } 
+            }
         }
         lbl.text = "ERROR"
     }
