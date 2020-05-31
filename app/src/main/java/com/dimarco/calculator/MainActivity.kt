@@ -90,6 +90,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // toggle positive and negative
+    // TODO : negative numbers current crash
     fun clickToggle(view: View) {
         if (lbl.text.substring(0, 1) == "-") {
             lbl.text = lbl.text.substring(1, lbl.text.length)
