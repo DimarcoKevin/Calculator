@@ -78,9 +78,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // clear button method
-    // TODO : fix
     fun clickAC(view: View) {
-        lbl.text = "0"
+        lbl.text = ""
     }
 
     // adding decimals to numbers
