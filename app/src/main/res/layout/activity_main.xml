@@ -68,7 +68,7 @@
                     android:layout_marginRight="1pt"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:onClick="clickPercent"
+                    android:onClick="operatorClick"
                     android:text="@string/percent"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
