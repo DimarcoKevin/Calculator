@@ -142,6 +142,8 @@ class MainActivity : AppCompatActivity() {
                 return
             } else if (char == Operator.PERCENT.op) {
                 // TODO : implement percentage
+                lbl.text = ((number1 * number2) / 100).toString()
+                return
             }
         }
         lbl.text = "ERROR"
