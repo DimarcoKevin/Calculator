@@ -106,11 +106,18 @@ class MainActivity : AppCompatActivity() {
 
     // equals button method
     // does the actual calculations and returns the solution
-    // TODO : complete implementation
     fun clickEquals(view: View) {
+        var negative = false
+        if (lbl.text[0] == '-') {
+            lbl.text = lbl.text.substring(1, lbl.length())
+            negative = true
+        }
         val numbers =  (lbl.text.split("+", "-", "*", "÷"))
-        val number1 = numbers[0].toDouble()
+        var number1 = numbers[0].toDouble()
         val number2 = numbers[1].toDouble()
+
+        // if the number if negative I am multiplying by -1
+        if (negative) number1 *= -1
 
         for (char in lbl.text) {
             if (char == Operator.PLUS.op) {
