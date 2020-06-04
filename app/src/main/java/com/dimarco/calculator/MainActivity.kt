@@ -112,7 +112,6 @@ class MainActivity : AppCompatActivity() {
 
     // equals button method
     // does the actual calculations and returns the solution
-    // TODO : add check for division by zero
     // TODO : add check for hitting equals without operator
     fun clickEquals(view: View) {
         var negative = false
@@ -138,10 +137,12 @@ class MainActivity : AppCompatActivity() {
                 lbl.text = (number1 * number2).toString()
                 return
             } else if (char == Operator.DIVIDE.op) {
+                if (number2 == 0.0) {
+                    break
+                }
                 lbl.text = (number1 / number2).toString()
                 return
             } else if (char == Operator.PERCENT.op) {
-                // TODO : implement percentage
                 lbl.text = ((number1 * number2) / 100).toString()
                 return
             }
