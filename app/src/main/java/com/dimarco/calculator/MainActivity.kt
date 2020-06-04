@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 
         // check if user has already added an operator
         // I think this first character check has fixed the issue that allows multiple operators
-        // TODO : it also crashes because this program doesnt support 2 operators yet
         for (char in lbl.text) {
             if (lbl.text[0] == '-' && !negative) {
                 negative = true
@@ -89,7 +88,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // adding decimals to numbers
-    // TODO : implement
+    // TODO : implement so user can only enter one decimal per number
     fun clickDecimal(view: View) {
         lbl.append(".")
     }
@@ -110,6 +109,8 @@ class MainActivity : AppCompatActivity() {
 
     // equals button method
     // does the actual calculations and returns the solution
+    // TODO : add check for division by zero
+    // TODO : add check for hitting equals without operator
     fun clickEquals(view: View) {
         var negative = false
         if (lbl.text[0] == '-') {
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
         var number1 = numbers[0].toDouble()
         val number2 = numbers[1].toDouble()
 
-        // if the number if negative I am multiplying by -1
+        // if the number is negative I am multiplying by -1
         if (negative) number1 *= -1
 
         for (char in lbl.text) {
