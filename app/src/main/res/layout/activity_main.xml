@@ -65,9 +65,10 @@
                     android:id="@+id/buttonPercent"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
                     android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
+                    android:onClick="clickPercent"
                     android:text="@string/percent"
                     android:textColor="@color/black"
                     android:textSize="12pt" />
