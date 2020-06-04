@@ -95,8 +95,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     // toggle positive and negative
-    // TODO : negative numbers current crash
+    // added check so app doesn't crash if you hit button with no digits present
     fun clickToggle(view: View) {
+        if (lbl.text.isEmpty()) {
+            return
+        }
+
         if (lbl.text.substring(0, 1) == "-") {
             lbl.text = lbl.text.substring(1, lbl.text.length)
         } else {
