@@ -38,7 +38,6 @@
                 android:layout_height="match_parent">
 
                 <Button
-
                     android:id="@+id/buttonAC"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
@@ -48,8 +47,7 @@
                     android:onClick="clickAC"
                     android:text="@string/AC"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonPosNeg"
@@ -61,21 +59,18 @@
                     android:onClick="clickToggle"
                     android:text="@string/plusMinus"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonPercent"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_marginRight="1pt"
                     android:layout_weight="1"
+                    android:layout_marginRight="1pt"
                     android:background="@color/white"
-                    android:onClick="operatorClick"
                     android:text="@string/percent"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonDivide"
@@ -86,8 +81,7 @@
                     android:onClick="operatorClick"
                     android:text="@string/divide"
                     android:textColor="@color/white"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
             </TableRow>
 
             <TableRow
@@ -105,8 +99,7 @@
                     android:onClick="numberClick"
                     android:text="@string/seven"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button8"
@@ -118,8 +111,7 @@
                     android:onClick="numberClick"
                     android:text="@string/eight"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button9"
@@ -131,8 +123,7 @@
                     android:onClick="numberClick"
                     android:text="@string/nine"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonTimes"
@@ -143,8 +134,7 @@
                     android:onClick="operatorClick"
                     android:text="@string/multiply"
                     android:textColor="@color/white"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
             </TableRow>
 
             <TableRow
@@ -162,8 +152,7 @@
                     android:onClick="numberClick"
                     android:text="@string/four"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button5"
@@ -175,8 +164,7 @@
                     android:onClick="numberClick"
                     android:text="@string/five"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button6"
@@ -188,8 +176,7 @@
                     android:onClick="numberClick"
                     android:text="@string/six"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonMinus"
@@ -200,8 +187,7 @@
                     android:onClick="operatorClick"
                     android:text="@string/minus"
                     android:textColor="@color/white"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
             </TableRow>
 
             <TableRow
@@ -219,8 +205,7 @@
                     android:onClick="numberClick"
                     android:text="@string/one"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button2"
@@ -232,8 +217,7 @@
                     android:onClick="numberClick"
                     android:text="@string/two"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/button3"
@@ -245,8 +229,7 @@
                     android:onClick="numberClick"
                     android:text="@string/three"
                     android:textColor="@color/black"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
 
                 <Button
                     android:id="@+id/buttonPlus"
@@ -257,8 +240,7 @@
                     android:onClick="operatorClick"
                     android:text="@string/plus"
                     android:textColor="@color/white"
-                    android:textSize="12pt"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textSize="12pt" />
             </TableRow>
 
         </TableLayout>
@@ -280,8 +262,7 @@
                 android:onClick="numberClick"
                 android:text="@string/zero"
                 android:textColor="@color/black"
-                android:textSize="12pt"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textSize="12pt" />
 
             <Button
                 android:id="@+id/buttonPeriod"
@@ -293,8 +274,7 @@
                 android:onClick="clickDecimal"
                 android:text="@string/period"
                 android:textColor="@color/black"
-                android:textSize="12pt"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textSize="12pt" />
 
             <Button
                 android:id="@+id/buttonEquals"
@@ -305,8 +285,7 @@
                 android:onClick="clickEquals"
                 android:text="@string/equals"
                 android:textColor="@color/white"
-                android:textSize="12pt"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:textSize="12pt" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
