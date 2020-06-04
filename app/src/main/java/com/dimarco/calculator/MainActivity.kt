@@ -8,22 +8,24 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * A simple calculator application following the UI of the MacOS calculator.
- * This application will only allow for 2 numbers to be compared (either added, subtracted, multiplied, or divided)
  * This application allows for decimals and positive / negative numbers
+ * This application will only allow for 2 numbers to be compared
+ * (addition, subtraction, multiplication, division, and percentages)
  *
  * @author Kevin Dimarco
  * www.kevindimarco.com
  * 2020
  */
 class MainActivity : AppCompatActivity() {
-    private val operatorList = arrayOf('+', '-', '*', '÷')
+    private val operatorList = arrayOf('+', '-', '*', '÷', '%')
 
     // enum to replace operators
     enum class Operator(val op: Char) {
         PLUS('+'),
         MINUS('-'),
         MULTIPLY('*'),
-        DIVIDE('÷')
+        DIVIDE('÷'),
+        PERCENT('%')
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             buttonMinus.id -> operator = "-"
             buttonTimes.id -> operator = "*"
             buttonDivide.id -> operator = "÷"
+            buttonPercent.id -> operator = "%"
         }
         lbl.append(operator)
     }
@@ -117,7 +120,7 @@ class MainActivity : AppCompatActivity() {
             lbl.text = lbl.text.substring(1, lbl.length())
             negative = true
         }
-        val numbers =  (lbl.text.split("+", "-", "*", "÷"))
+        val numbers =  (lbl.text.split("+", "-", "*", "÷", "%"))
         var number1 = numbers[0].toDouble()
         val number2 = numbers[1].toDouble()
 
@@ -137,6 +140,8 @@ class MainActivity : AppCompatActivity() {
             } else if (char == Operator.DIVIDE.op) {
                 lbl.text = (number1 / number2).toString()
                 return
+            } else if (char == Operator.PERCENT.op) {
+                // TODO : implement percentage
             }
         }
         lbl.text = "ERROR"
