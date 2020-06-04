@@ -60,12 +60,16 @@ class MainActivity : AppCompatActivity() {
     fun operatorClick(view: View) {
         val operatorSelected = view as Button
         var operator = ""
+        var negative = false
 
         // check if user has already added an operator
-        // TODO : allows for infinite minus / negative operators but now prevents doubles of others
+        // I think this first character check has fixed the issue that allows multiple operators
         // TODO : it also crashes because this program doesnt support 2 operators yet
         for (char in lbl.text) {
-            if (char == Operator.MINUS.op) continue
+            if (lbl.text[0] == '-' && !negative) {
+                negative = true
+                continue
+            }
             if (operatorList.contains(char)) return
         }
 
