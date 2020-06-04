@@ -63,7 +63,9 @@ class MainActivity : AppCompatActivity() {
         var operator = ""
 
         // check if user has already added an operator
+        // TODO : doesnt allow user to add operator if they made first number negative
         for (char in lbl.text) {
+
             if (operatorList.contains(char)) return
         }
 
