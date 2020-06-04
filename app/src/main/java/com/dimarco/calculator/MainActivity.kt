@@ -52,20 +52,20 @@ class MainActivity : AppCompatActivity() {
             button8.id -> number = "8"
             button9.id -> number = "9"
         }
-
         lbl.append(number)
     }
 
     // all operator button methods go here
-    // only allows one operator per calculation
+    // only allows one operator per calculation (scope limitation)
     fun operatorClick(view: View) {
         val operatorSelected = view as Button
         var operator = ""
 
         // check if user has already added an operator
-        // TODO : doesnt allow user to add operator if they made first number negative
+        // TODO : allows for infinite minus / negative operators but now prevents doubles of others
+        // TODO : it also crashes because this program doesnt support 2 operators yet
         for (char in lbl.text) {
-
+            if (char == Operator.MINUS.op) continue
             if (operatorList.contains(char)) return
         }
 
@@ -108,17 +108,17 @@ class MainActivity : AppCompatActivity() {
         val number1 = numbers[0].toDouble()
         val number2 = numbers[1].toDouble()
 
-        for (ch in lbl.text) {
-            if (ch == Operator.PLUS.op) {
+        for (char in lbl.text) {
+            if (char == Operator.PLUS.op) {
                 lbl.text = (number1 + number2).toString()
                 return
-            } else if (ch == Operator.MINUS.op) {
+            } else if (char == Operator.MINUS.op) {
                 lbl.text = (number1 - number2).toString()
                 return
-            } else if (ch == Operator.MULTIPLY.op) {
+            } else if (char == Operator.MULTIPLY.op) {
                 lbl.text = (number1 * number2).toString()
                 return
-            } else if (ch == Operator.DIVIDE.op) {
+            } else if (char == Operator.DIVIDE.op) {
                 lbl.text = (number1 / number2).toString()
                 return
             }
