@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.ceil
+import kotlin.math.floor
 
 /**
  * A simple calculator application following the UI of the MacOS calculator.
@@ -123,45 +125,80 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // will check if the input is a whole number or not
+    private fun isWholeNumber(input: Double): Boolean {
+        return (input == floor(input) && input == ceil(input))
+    }
+
     // equals button method
     // does the actual calculations and returns the solution
     // TODO : add check for hitting equals without operator
     fun clickEquals(view: View) {
+        var result: Double = 0.0
+        var wholeNumber: Int?
         var negative = false
+        var error = true
+
+        // checking for negative sign
         if (lbl.text[0] == '-') {
             lbl.text = lbl.text.substring(1, lbl.length())
             negative = true
         }
-        val numbers = (lbl.text.split("+", "-", "*", "÷", "%"))
 
+        // finding the delimiter and then splitting the two numbers
+        val numbers = (lbl.text.split("+", "-", "*", "÷", "%"))
         var number1 = numbers[0].toDouble()
         val number2 = numbers[1].toDouble()
-
 
         // if the number is negative I am multiplying by -1
         if (negative) number1 *= -1
 
+        // iterating through to find the operator
         for (char in lbl.text) {
             if (char == Operator.PLUS.op) {
-                lbl.text = (number1 + number2).toString()
-                return
+                result = number1 + number2
+                error = false
+                break
+
             } else if (char == Operator.MINUS.op) {
-                lbl.text = (number1 - number2).toString()
-                return
+                result = number1 - number2
+                error = false
+                break
+
             } else if (char == Operator.MULTIPLY.op) {
-                lbl.text = (number1 * number2).toString()
-                return
+                result = number1 * number2
+                error = false
+                break
+
             } else if (char == Operator.DIVIDE.op) {
+                // checking for division by 0
                 if (number2 == 0.0) {
-                    break
+                    lbl.text = "ERROR"
+                    return
                 }
-                lbl.text = (number1 / number2).toString()
-                return
+                result = number1 / number2
+                error = false
+                break
+
             } else if (char == Operator.PERCENT.op) {
-                lbl.text = ((number1 * number2) / 100).toString()
-                return
+                result = ((number1 * number2) / 100)
+                error = false
+                break
             }
         }
-        lbl.text = "ERROR"
+
+        // checking to see if it hit an error along the way
+        if (error) {
+            lbl.text = "Error"
+            return
+        }
+
+        // checking to see if it needs to return an int or a double
+        if (isWholeNumber(result)) {
+            wholeNumber = result.toInt()
+            lbl.text = wholeNumber.toString()
+        } else {
+            lbl.text = result.toString()
+        }
     }
 }
