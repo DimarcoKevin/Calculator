@@ -130,12 +130,19 @@ class MainActivity : AppCompatActivity() {
         return (input == floor(input) && input == ceil(input))
     }
 
+    // TODO : Implement method to check number of decimals
+    private fun removeExtraDecimals(input: Double): Double {
+        return 0.0
+    }
+
     // equals button method
     // does the actual calculations and returns the solution
-    // TODO : add check for hitting equals without operator
+    // TODO : add check for hitting equals without operator or without two numbers
+    // TODO : add check for results to max cap at 6 decimals
     fun clickEquals(view: View) {
+        // variables needed to find solution
+        val wholeNumber: Int?
         var result: Double = 0.0
-        var wholeNumber: Int?
         var negative = false
         var error = true
 
