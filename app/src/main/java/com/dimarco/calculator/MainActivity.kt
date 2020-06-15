@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
     private fun isWholeNumber(input: Double): Boolean {
         return (input == floor(input) && input == ceil(input))
     }
-    
+
     // will round any results to a maximum of six decimal places
     private fun round(input: Double): Double {
         val df = DecimalFormat("#.######")
@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity() {
     // equals button method
     // does the actual calculations and returns the solution
     // TODO : add check for hitting equals without operator or without two numbers
-    // TODO : add check for results to max cap at 6 decimals
+    // TODO : add ability to change text size if too many digits are added
     fun clickEquals(view: View) {
         // variables needed to find solution
         val wholeNumber: Int?
