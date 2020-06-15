@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import kotlin.math.ceil
 import kotlin.math.floor
 
@@ -129,10 +131,12 @@ class MainActivity : AppCompatActivity() {
     private fun isWholeNumber(input: Double): Boolean {
         return (input == floor(input) && input == ceil(input))
     }
-
-    // TODO : Implement method to check number of decimals
-    private fun removeExtraDecimals(input: Double): Double {
-        return 0.0
+    
+    // will round any results to a maximum of six decimal places
+    private fun round(input: Double): Double {
+        val df = DecimalFormat("#.######")
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(input).toDouble()
     }
 
     // equals button method
@@ -205,6 +209,7 @@ class MainActivity : AppCompatActivity() {
             wholeNumber = result.toInt()
             lbl.text = wholeNumber.toString()
         } else {
+            result = round(result)
             lbl.text = result.toString()
         }
     }
