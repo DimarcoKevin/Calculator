@@ -1,10 +1,12 @@
 package com.dimarco.calculator
 
+import android.graphics.Path
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.ceil
@@ -143,14 +145,18 @@ class MainActivity : AppCompatActivity() {
 
     // equals button method
     // does the actual calculations and returns the solution
-    // TODO : add check for hitting equals without operator or without two numbers
     // TODO : add ability to change text size if too many digits are added
     fun clickEquals(view: View) {
         // variables needed to find solution
         val wholeNumber: Int?
         var result: Double = 0.0
-        var negative = false
-        var error = true
+        var negative: Boolean = false
+        var error: Boolean = true
+
+        // initializing number variables
+        var numbers: List<String>
+        var number1: Double
+        var number2: Double
 
         // checking for negative sign
         if (lbl.text[0] == '-') {
@@ -158,10 +164,18 @@ class MainActivity : AppCompatActivity() {
             negative = true
         }
 
-        // finding the delimiter and then splitting the two numbers
-        val numbers = (lbl.text.split("+", "-", "*", "÷", "%"))
-        var number1 = numbers[0].toDouble()
-        val number2 = numbers[1].toDouble()
+        // running a try catch to protect against missing numbers / operators
+        try {
+            // finding the delimiter and then splitting the two numbers
+            numbers = (lbl.text.split(Operator.PLUS.op, Operator.MINUS.op, Operator.MULTIPLY.op, Operator.DIVIDE.op, Operator.PERCENT.op))
+            number1 = numbers[0].toDouble()
+            number2 = numbers[1].toDouble()
+        } catch (e: Exception) {
+            // TODO : specific error messages
+            e.printStackTrace()
+            lbl.text = "Missing Error"
+            return
+        }
 
         // if the number is negative I am multiplying by -1
         if (negative) number1 *= -1
