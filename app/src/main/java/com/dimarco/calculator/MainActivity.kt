@@ -21,6 +21,7 @@ import kotlin.math.floor
  * 2020
  */
 class MainActivity : AppCompatActivity() {
+    // TODO : find way to remove this array and replace with enum
     private val operatorList = arrayOf('+', '-', '*', '÷', '%')
 
     // enum to replace operators
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                 negative = true
                 continue
             }
+
             if (operatorList.contains(char)) return
         }
 
@@ -165,36 +167,42 @@ class MainActivity : AppCompatActivity() {
         if (negative) number1 *= -1
 
         // iterating through to find the operator
-        for (char in lbl.text) {
-            if (char == Operator.PLUS.op) {
-                result = number1 + number2
-                error = false
-                break
-
-            } else if (char == Operator.MINUS.op) {
-                result = number1 - number2
-                error = false
-                break
-
-            } else if (char == Operator.MULTIPLY.op) {
-                result = number1 * number2
-                error = false
-                break
-
-            } else if (char == Operator.DIVIDE.op) {
-                // checking for division by 0
-                if (number2 == 0.0) {
-                    lbl.text = "ERROR"
-                    return
+        loop@ for (char in lbl.text) {
+            when (char) {
+                Operator.PLUS.op -> {
+                    result = number1 + number2
+                    error = false
+                    break@loop
                 }
-                result = number1 / number2
-                error = false
-                break
 
-            } else if (char == Operator.PERCENT.op) {
-                result = ((number1 * number2) / 100)
-                error = false
-                break
+                Operator.MINUS.op -> {
+                    result = number1 - number2
+                    error = false
+                    break@loop
+                }
+
+                Operator.MULTIPLY.op -> {
+                    result = number1 * number2
+                    error = false
+                    break@loop
+                }
+
+                Operator.DIVIDE.op -> {
+                    // checking for division by 0
+                    if (number2 == 0.0) {
+                        lbl.text = "ERROR"
+                        return
+                    }
+                    result = number1 / number2
+                    error = false
+                    break@loop
+                }
+
+                Operator.PERCENT.op -> {
+                    result = ((number1 * number2) / 100)
+                    error = false
+                    break@loop
+                }
             }
         }
 
