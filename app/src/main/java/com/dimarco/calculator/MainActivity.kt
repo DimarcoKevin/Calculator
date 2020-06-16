@@ -79,12 +79,19 @@ class MainActivity : AppCompatActivity() {
                 continue
             }
 
-            if (operatorList.contains(char)) return
+            // this if statement still utilizes the operatorList array
+            // if (operatorList.contains(char)) return
+
+            // TODO : find more efficient way to run this statement
+            // this if statement utilizes the enum
+            if (char.equals(Operator.valueOf(char.toString()))) return
+
+
         }
 
         // finding which operator button was clicked
         when (operatorSelected.id) {
-            buttonPlus.id -> operator = "+"
+            buttonPlus.id -> operator = "+" // Operator.PLUS.op.toString() // This works
             buttonMinus.id -> operator = "-"
             buttonTimes.id -> operator = "*"
             buttonDivide.id -> operator = "÷"
@@ -106,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             if (char == '.' ) {
                 decimalUsed = true
             }
-
+            // TODO : remove operatorList and use enum instead
             if (operatorList.contains(char)) {
                 decimalUsed = false
             }
