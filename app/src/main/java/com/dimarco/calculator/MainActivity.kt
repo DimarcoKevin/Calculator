@@ -49,8 +49,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         // finding which button was selected
+        // TODO : use string.xml values rather than hard coded values
         when (numberSelected.id) {
-            button0.id -> number = "0"
+            button0.id -> number = "0" //R.string.zero.toString()
             button1.id -> number = "1"
             button2.id -> number = "2"
             button3.id -> number = "3"
@@ -79,13 +80,9 @@ class MainActivity : AppCompatActivity() {
                 continue
             }
 
+            // TODO : find a way to do this if statement using the enum
             // this if statement still utilizes the operatorList array
-            // if (operatorList.contains(char)) return
-
-            // TODO : find more efficient way to run this statement
-            // this if statement utilizes the enum
-            if (char.equals(Operator.valueOf(char.toString()))) return
-
+            if (operatorList.contains(char)) return
 
         }
 
