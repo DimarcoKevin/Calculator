@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
+import java.lang.NumberFormatException
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.ceil
@@ -170,20 +171,30 @@ class MainActivity : AppCompatActivity() {
         // running a try catch to protect against missing numbers / operators
         try {
             // finding the delimiter and then splitting the two numbers
-            numbers = (lbl.text.split(Operator.PLUS.op, Operator.MINUS.op, Operator.MULTIPLY.op, Operator.DIVIDE.op, Operator.PERCENT.op))
+            numbers = (lbl.text.split(
+                Operator.PLUS.op,
+                Operator.MINUS.op,
+                Operator.MULTIPLY.op,
+                Operator.DIVIDE.op,
+                Operator.PERCENT.op
+            ))
             number1 = numbers[0].toDouble()
             number2 = numbers[1].toDouble()
+            
+        } catch (ex: NumberFormatException) {
+            ex.printStackTrace()
+            lbl.text = "Number Error"
+            return
         } catch (e: Exception) {
-            // TODO : specific error messages
             e.printStackTrace()
-            lbl.text = "Missing Error"
+            lbl.text = "Operator Error"
             return
         }
 
-        // if the number is negative I am multiplying by -1
+        // if the number is negative, multiplying by -1
         if (negative) number1 *= -1
 
-        // iterating through to find the operator
+        // iterating through to find the operator and perform chosen operation
         loop@ for (char in lbl.text) {
             when (char) {
                 Operator.PLUS.op -> {
@@ -207,8 +218,8 @@ class MainActivity : AppCompatActivity() {
                 Operator.DIVIDE.op -> {
                     // checking for division by 0
                     if (number2 == 0.0) {
-                        lbl.text = "ERROR"
-                        return
+                        error = true
+                        break@loop
                     }
                     result = number1 / number2
                     error = false
