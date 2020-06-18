@@ -180,14 +180,14 @@ class MainActivity : AppCompatActivity() {
             ))
             number1 = numbers[0].toDouble()
             number2 = numbers[1].toDouble()
-            
+
         } catch (ex: NumberFormatException) {
             ex.printStackTrace()
             lbl.text = "Number Error"
             return
         } catch (e: Exception) {
             e.printStackTrace()
-            lbl.text = "Operator Error"
+            lbl.text = "Op Missing"
             return
         }
 
