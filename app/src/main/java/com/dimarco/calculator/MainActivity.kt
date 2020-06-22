@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.ArithmeticException
 import java.lang.Exception
 import java.lang.NumberFormatException
 import java.math.RoundingMode
@@ -24,6 +25,7 @@ import kotlin.math.floor
  * 2020
  */
 class MainActivity : AppCompatActivity() {
+    // TODO : change all string literals to string variables
 
     // enum to replace operators
     enum class Operator(val op: Char) {
@@ -147,6 +149,7 @@ class MainActivity : AppCompatActivity() {
     // equals button method
     // does the actual calculations and returns the solution
     // TODO : add ability to change text size if too many digits are added
+    // TODO : fix issue where lbl.text is empty and equals will crash app
     fun clickEquals(view: View) {
         // variables needed to find solution
         val wholeNumber: Int?
