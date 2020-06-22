@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         // finding which button was selected
-        // TODO : use string.xml values rather than hard coded values
         when (numberSelected.id) {
             button0.id -> number = resources.getString(R.string.zero)
             button1.id -> number = resources.getString(R.string.one)
