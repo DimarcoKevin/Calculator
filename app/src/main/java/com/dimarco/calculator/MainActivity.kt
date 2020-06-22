@@ -158,12 +158,14 @@ class MainActivity : AppCompatActivity() {
         var error: Boolean = true
 
         // initializing number variables
+        var input = lbl.text.trim()
         var numbers: List<String>
         var number1: Double
         var number2: Double
 
         // checking is string is null or empty
-        if (lbl.text == null || lbl.text == "") {
+        // TODO : this has an error if you do an equation, clear it, then hit equals
+        if (input == null || input == "") {
             lbl.text = "Null Error"
             return
         }
