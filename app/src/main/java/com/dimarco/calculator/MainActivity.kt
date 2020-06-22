@@ -24,8 +24,6 @@ import kotlin.math.floor
  * 2020
  */
 class MainActivity : AppCompatActivity() {
-    // TODO : find way to remove this array and replace with enum
-    private val operatorList = arrayOf('+', '-', '*', '÷', '%')
 
     // enum to replace operators
     enum class Operator(val op: Char) {
@@ -80,9 +78,8 @@ class MainActivity : AppCompatActivity() {
                 continue
             }
 
-            // TODO : find a way to do this if statement using the enum
-            // this if statement still utilizes the operatorList array
-            if (operatorList.contains(char)) return
+            // this checks if the character is an operator
+            if (Operator.values().any { it.op == char }) return
         }
 
         // finding which operator button was clicked
@@ -109,8 +106,9 @@ class MainActivity : AppCompatActivity() {
             if (char == '.' ) {
                 decimalUsed = true
             }
-            // TODO : remove operatorList and use enum instead
-            if (operatorList.contains(char)) {
+
+            // this checks if the character is an operator
+            if (Operator.values().any { it.op == char }) {
                 decimalUsed = false
             }
         }
