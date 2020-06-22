@@ -52,16 +52,16 @@ class MainActivity : AppCompatActivity() {
         // finding which button was selected
         // TODO : use string.xml values rather than hard coded values
         when (numberSelected.id) {
-            button0.id -> number = "0"
-            button1.id -> number = "1"
-            button2.id -> number = "2"
-            button3.id -> number = "3"
-            button4.id -> number = "4"
-            button5.id -> number = "5"
-            button6.id -> number = "6"
-            button7.id -> number = "7"
-            button8.id -> number = "8"
-            button9.id -> number = "9"
+            button0.id -> number = resources.getString(R.string.zero)
+            button1.id -> number = resources.getString(R.string.one)
+            button2.id -> number = resources.getString(R.string.two)
+            button3.id -> number = resources.getString(R.string.three)
+            button4.id -> number = resources.getString(R.string.four)
+            button5.id -> number = resources.getString(R.string.five)
+            button6.id -> number = resources.getString(R.string.six)
+            button7.id -> number = resources.getString(R.string.seven)
+            button8.id -> number = resources.getString(R.string.eight)
+            button9.id -> number = resources.getString(R.string.nine)
         }
         lbl.append(number)
     }
