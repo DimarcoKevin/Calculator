@@ -162,6 +162,12 @@ class MainActivity : AppCompatActivity() {
         var number1: Double
         var number2: Double
 
+        // checking is string is null or empty
+        if (lbl.text == null || lbl.text == "") {
+            lbl.text = "Null Error"
+            return
+        }
+
         // checking for negative sign
         if (lbl.text[0] == '-') {
             lbl.text = lbl.text.substring(1, lbl.length())
