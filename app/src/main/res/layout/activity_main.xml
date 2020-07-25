@@ -9,9 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray"
         android:gravity="bottom"
         android:orientation="vertical"
-        android:background="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,30 +20,31 @@
         <TextView
             android:id="@+id/lbl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/gray"
             android:gravity="center_vertical|end"
             android:text="@string/zero"
             android:textColor="@color/white"
-            android:textSize="30pt" />
+            android:textSize="30pt"
+            app:autoSizeTextType="uniform" />
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TableRow
-                android:layout_marginBottom="1pt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
 
                 <Button
                     android:id="@+id/buttonAC"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="clickAC"
                     android:text="@string/AC"
@@ -54,9 +55,9 @@
                     android:id="@+id/buttonPosNeg"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="clickToggle"
                     android:text="@string/plusMinus"
@@ -89,17 +90,17 @@
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="1pt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
 
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/seven"
@@ -110,9 +111,9 @@
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/eight"
@@ -123,9 +124,9 @@
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/nine"
@@ -145,17 +146,17 @@
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="1pt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/four"
@@ -166,9 +167,9 @@
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/five"
@@ -179,9 +180,9 @@
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/six"
@@ -201,17 +202,17 @@
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="1pt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
 
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/one"
@@ -222,9 +223,9 @@
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/two"
@@ -235,9 +236,9 @@
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginRight="1pt"
                     android:layout_marginEnd="1pt"
+                    android:layout_marginRight="1pt"
+                    android:layout_weight="1"
                     android:background="@color/white"
                     android:onClick="numberClick"
                     android:text="@string/three"
@@ -269,9 +270,9 @@
                 android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_marginRight="1pt"
                 android:layout_marginEnd="1pt"
+                android:layout_marginRight="1pt"
+                android:layout_weight="1"
                 android:background="@color/white"
                 android:onClick="numberClick"
                 android:text="@string/zero"
@@ -282,9 +283,9 @@
                 android:id="@+id/buttonPeriod"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:layout_weight=".125"
-                android:layout_marginRight="1pt"
                 android:layout_marginEnd="1pt"
+                android:layout_marginRight="1pt"
+                android:layout_weight=".125"
                 android:background="@color/white"
                 android:onClick="clickDecimal"
                 android:text="@string/period"
